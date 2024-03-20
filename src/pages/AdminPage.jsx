@@ -13,7 +13,7 @@ const AdminPage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/decorator/all');
+      const response = await axios.get('https://decorator-backend.onrender.com/api/decorator/all');
       setData(response.data)
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -31,7 +31,7 @@ const AdminPage = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await axios.put(`http://localhost:8000/api/decorator/update/${editingItem.itemcode}`, editingItem);
+      const response = await axios.put(`https://decorator-backend.onrender.com/api/decorator/update/${editingItem.itemcode}`, editingItem);
       console.log('Update response:', response.data);
       fetchData();
       setIsModalVisible(false);
@@ -42,7 +42,7 @@ const AdminPage = () => {
 
   const handleDelete = async (itemcode) => {
     try {
-      await axios.delete(`http://localhost:8000/api/decorator/delete/${itemcode}`);
+      await axios.delete(`https://decorator-backend.onrender.com/api//decorator/delete/${itemcode}`);
       fetchData();
       message.success('Item deleted successfully');
     } catch (error) {
