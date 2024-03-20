@@ -30,7 +30,7 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8000/api/decorator/add', itemData);
+      await axios.post('https://decorator-backend.onrender.com/api/decorator/add', itemData);
       message.success('Product added successfully');
       setItemData({
         itemcode: '',
